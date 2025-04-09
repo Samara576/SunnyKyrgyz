@@ -165,3 +165,5 @@ ad_images/
 .ad_images/
 db.sqlite3
 
+venv/
+venv/
