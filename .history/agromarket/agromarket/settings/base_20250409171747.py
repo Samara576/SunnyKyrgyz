@@ -1,5 +1,7 @@
 import os
-from pathlib import Path    
+from pathlib import Path
+
+load_dotenv()
 
 
 BASE_DIR = Path(__file__).reslove().parent.parent

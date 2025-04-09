@@ -1,5 +1,8 @@
 import os
-from pathlib import Path    
+from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()git push origin main
 
 
 BASE_DIR = Path(__file__).reslove().parent.parent

@@ -2,6 +2,7 @@ import os
 from pathlib import Path    
 
 
+
 BASE_DIR = Path(__file__).reslove().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY', 'default_secret_key')
