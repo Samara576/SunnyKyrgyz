@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="login_title">Войти</title>
+  <link rel="stylesheet" href="../css/" />
+</head>
+<body>
+
+  <div class="login-container">
+    <h2 data-i18n="login_header">Войти в аккаунт</h2>
+    <form action="#" method="post">
+      <label>
+        <input type="email" name="email" placeholder="Электронная почта" data-i18n-placeholder="email_placeholder" required />
+      </label>
+      <label>
+        <input type="password" name="password" placeholder="Пароль" data-i18n-placeholder="password_placeholder" required />
+      </label>
+      <a href="profile.html" class="home-button">Войти</a>
+    </form>
+
+    <a href="forgot-password.html" class="forgot-password" data-i18n="forgot_password">Забыли пароль?</a>
+
+    <!-- Кнопка домой -->
+    <a href="index.html" class="home-button" data-i18n="home_button">Главная</a>
+  </div>
+
+  <!-- Скрипт для автоматической подгрузки языка из localStorage -->
+  <script src="lang.js"></script>
+  <script>
+    // Получаем язык из localStorage
+    const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
+    setLanguage(savedLang);
+  </script>
+</body>
+</html>

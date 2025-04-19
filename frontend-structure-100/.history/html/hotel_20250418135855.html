@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Поиск жильё</title>
+  <link rel="stylesheet" href="../css/hotel.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="../img/Black_and_White_Simple_Adventure_Logo-removebg-preview.png" alt="Logo" style="height: 35px;">
+  </div>
+  <div class="nav-links">
+    <a href="#" onclick="changeLanguage('ru')">🇷🇺 RU</a>
+    <a href="#" onclick="changeLanguage('kg')">🇰🇬 KG</a>
+    <a href="#" onclick="changeLanguage('en')">🇬🇧 EN</a>
+  </div>
+</header>
+
+<div class="form-container">
+  <form onsubmit="searchHousing(event)">
+    <div class="form-group">
+      <img src="../img/location-removebg-preview.png" alt="Локация">
+      <input type="text" name="location" placeholder="Локация" required>
+    </div>
+    <div class="form-group">
+      <img src="../img/search-removebg-preview.png" alt="Поиск">
+      <input type="text" name="search" placeholder="Найти жильё">
+    </div>
+    <div class="form-group">
+      <img src="img/icons/kalendar-removebg-preview.png" alt="Календарь">
+      <input type="text" name="dates" placeholder="Выбрать даты" onfocus="this.type='date'" required>
+    </div>
+    <div class="form-group">
+      <img src="img/icons/free-icon-people-3633274.png" alt="количество людей">
+      <input type="number" name="guests" placeholder="количество людей" min="1" value="1" required>
+    </div>
+    <button type="submit" class="search-button">Поиск</button>
+  </form>
+</div>
+
+<script>
+  const translations = {
+    ru: {
+      title: "Поиск жильё",
+      location_placeholder: "Локация",
+      search_placeholder: "Найти жильё",
+      dates_placeholder: "Выбрать даты",
+      guests_placeholder: "количество людей",
+      search_button: "Поиск"
+    },
+    kg: {
+      title: "Турак жай издөө",
+      location_placeholder: "Локация",
+      search_placeholder: "Турак жай издөө",
+      dates_placeholder: "Күндөрдү тандаңыз",
+      guests_placeholder: "Келгендердин саны",
+      search_button: "Издөө"
+    },
+    en: {
+      title: "Search for accommodation",
+      location_placeholder: "Location",
+      search_placeholder: "Find accommodation",
+      dates_placeholder: "Select dates",
+      guests_placeholder: "Number of guests",
+      search_button: "Search"
+    }
+  };
+
+  function changeLanguage(language) {
+    document.title = translations[language].title;
+    document.querySelector("input[name='location']").placeholder = translations[language].location_placeholder;
+    document.querySelector("input[name='search']").placeholder = translations[language].search_placeholder;
+    document.querySelector("input[name='dates']").placeholder = translations[language].dates_placeholder;
+    document.querySelector("input[name='guests']").placeholder = translations[language].guests_placeholder;
+    document.querySelector(".search-button").textContent = translations[language].search_button;
+  }
+
+  function searchHousing(event) {
+  event.preventDefault();
+  window.location.href = "booking.html"; // Бул баракчага өтөт
+}
+
+</script>
+
+</body>
+</html>

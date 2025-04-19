@@ -1,0 +1,161 @@
+/* === Общие стили === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background: linear-gradient(135deg, #e6f9ff, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* === Контейнер логина === */
+.login-container {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 50px 40px;
+  border-radius: 30px;
+  width: 800px;
+  text-align: center;
+  box-shadow:
+    0 0 20px rgba(255, 223, 0, 0.4),
+    0 0 40px rgba(255, 210, 0, 0.3),
+    0 0 60px rgba(255, 200, 0, 0.2);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  transition: box-shadow 0.4s ease;
+}
+
+.login-container:hover {
+  box-shadow:
+    0 0 30px rgba(255, 240, 0, 0.7),
+    0 0 60px rgba(255, 215, 0, 0.4),
+    0 0 90px rgba(255, 200, 0, 0.3);
+}
+
+/* === Заголовок === */
+h2 {
+  margin-bottom: 25px;
+  font-size: 2em;
+  color: #333;
+}
+
+/* === Форма === */
+form {
+  width: 100%;
+}
+
+form label {
+  display: block;
+  margin-bottom: 15px;
+  text-align: left;
+  font-weight: 600;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  transition: 0.2s;
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #ffcc00;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 200, 0, 0.4);
+}
+
+/* === Кнопка входа === */
+button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background-color: #ffcc00;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffdb4d;
+}
+
+/* === Ссылка "Забыли пароль?" === */
+.forgot-password {
+  display: block;
+  margin-top: 16px;
+  font-size: 1.1em;
+  color: #007bff;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+/* === Кнопка домой === */
+.home-button {
+  margin-top: 25px;
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #1e7e34;
+}
+
+/* === Адаптив === */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 30px 20px;
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  input {
+    font-size: 1em;
+    padding: 16px;
+  }
+
+  button[type="submit"] {
+    font-size: 1.2em;
+    padding: 12px;
+  }
+
+  .home-button {
+    font-size: 1em;
+    padding: 8px 18px;
+  }
+
+  .forgot-password {
+    font-size: 0.95em;
+  }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Катталуу - Sunny Kyrgyzstan</title>
+  <link rel="stylesheet" href="../css/register.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <section class="register-section">
+    <div class="register-container">
+      <h2>Катталуу</h2>
+      <form id="registerForm">
+        <input type="text" id="fullname" placeholder="Аты-жөнү" required />
+        <input type="email" id="email" placeholder="Электрондук почта" required />
+        <input type="tel" id="phone" placeholder="Телефон номери" required />
+
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Сыр сөз" required />
+          <span class="toggle-password" onclick="togglePassword('password', this)">
+            <i class="fa-solid fa-eye"></i>
+          </span>
+        </div>
+
+        <div class="password-wrapper">
+          <input type="password" id="confirmPassword" placeholder="Сыр сөздү кайталаңыз" required />
+          <span class="toggle-password" onclick="togglePassword('confirmPassword', this)">
+            <i class="fa-solid fa-eye"></i>
+          </span>
+        </div>
+
+        <p id="errorMessage" class="error-message"></p>
+
+        <a href="profile.html" class="home-button">Катталуу</a>
+      </form>
+
+      <a href="index.html" class="home-button">Башкы бетке кайтуу</a>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('registerForm');
+    const errorMessage = document.getElementById('errorMessage');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const fullName = document.getElementById('fullname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      // Валидация
+      if (!fullName || !email || !phone || !password || !confirmPassword) {
+        errorMessage.textContent = "Бардык талааларды толтуруңуз!";
+        return;
+      }
+
+      if (password.length < 6) {
+        errorMessage.textContent = "Сырсөз 6 символдон кем болбошу керек!";
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        errorMessage.textContent = "Сырсөздөр дал келбей жатат!";
+        return;
+      }
+
+      errorMessage.textContent = "";
+
+      const formData = {
+        fullName,
+        email,
+        phone,
+        password
+      };
+
+      // Фейк API (бул жерде эле console.log кылабыз)
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Серверден ката кетти');
+        return res.json();
+      })
+      .then(data => {
+        console.log("Жооп:", data);
+        alert("Катталуу ийгиликтүү! 🎉");
+        form.reset();
+      })
+      .catch(error => {
+        console.error("Ката:", error);
+        alert("Ката чыкты. Кийин дагы аракет кылыңыз.");
+      });
+    });
+
+    function togglePassword(fieldId, iconElement) {
+      const field = document.getElementById(fieldId);
+      const icon = iconElement.querySelector("i");
+
+      if (field.type === "password") {
+        field.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+      } else {
+        field.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+      }
+    }
+  </script>
+
+</body>
+</html>
