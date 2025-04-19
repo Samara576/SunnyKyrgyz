@@ -1,0 +1,164 @@
+/* body {
+    margin: 0;
+    font-family: sans-serif;
+    background: url('img/2fon.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+  }
+  
+  header {
+    background: rgba(0, 128, 128, 0.493);
+    color: rgb(255, 255, 255);
+    padding: 30px 30px;
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .form-container {
+    background: rgba(255, 255, 255, 0.486);
+    padding: 60px;
+    max-width: 700px;
+    margin: 80px auto;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+  
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-group img {
+    width: 40px;
+    margin-right: 10px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    font-size: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+  }
+  
+  button {
+    width: 50%;
+    padding: 8px;
+    font-size: 30px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    
+  }
+  
+  button:hover {
+    background-color: #5fca56;
+  }
+   */
+
+   body {
+    margin: 0;
+    font-family: sans-serif;
+    background: url('../img/2fon.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+  }
+  
+  header {
+    background: rgba(0, 128, 128, 0.493);
+    color: rgb(255, 255, 255);
+    padding: 30px 30px;
+    display: flex;
+    font-size: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav-links a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .form-container {
+    background: rgba(255, 255, 255, 0.486);
+    padding: 60px;
+    max-width: 700px;
+    margin: 80px auto;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-group img {
+    width: 40px;
+    margin-right: 10px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    font-size: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+  }
+  
+  button {
+    width: 50%;
+    padding: 8px;
+    font-size: 30px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #5fca56;
+  }
+  
+  /* Поиск кнопкасын борборго жайгаштыруу */
+  .search-button {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    padding: 8px;
+    font-size: 30px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #5fca56;
+  }
+  
+  

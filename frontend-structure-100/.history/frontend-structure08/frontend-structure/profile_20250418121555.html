@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Профиль пользователя</title>
+  <link rel="stylesheet" href="profile.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="img/logoa.png" alt="Logo">
+      <span>SunnyKyrgyzstan</span>
+    </div>
+    <div class="lang-switcher">
+      <a href="#">RU</a> | <a href="#">KG</a> | <a href="#">EN</a>
+    </div>
+  </header>
+
+  <main>
+    <aside class="sidebar">
+      <img src="img/profile.png" class="sidebar-logo" alt="Sidebar Logo">
+      <ul>
+        <li class="active">Моя страница</li>
+        <li>Бронирование</li>
+        <li>Сообщения</li>
+        <li>Сохраненные</li>
+        <li>Отзывы</li>
+        <li>Настройки</li>
+      </ul>
+    </aside>
+
+    <section class="profile">
+      <div class="profile-card">
+        <div class="left">
+          <img src="img/profile.png" alt="User" class="avatar">
+        </div>
+        <div class="right">
+          <h2>Имя пользователя</h2>
+          <form>
+            <label>Возраст</label>
+            <input type="text" placeholder="25">
+
+            <label>Адрес</label>
+            <input type="text" placeholder="г. Бишкек, ул. Ленина 1">
+            <label>Телефон</label>
+            <input type="text" placeholder="+996 555 123 456">
+
+            <label>Место работы</label>
+            <input type="text" placeholder="">
+
+            <button type="button">Редактировать</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

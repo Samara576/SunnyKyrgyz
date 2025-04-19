@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(to right, #9ef5fc, #064f11);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(to right, #004e92, #000428);
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.lang-switcher a {
+  color: white;
+  margin: 0 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 220px;
+  background: linear-gradient(to bottom, #f0f0f0, #dcdcdc);
+  border-top-right-radius: 30px;
+  padding: 30px 20px;
+}
+
+.sidebar-logo {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.sidebar ul li.active,
+.sidebar ul li:hover {
+  background-color: #3dafff;
+  color: white;
+}
+
+.profile {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.profile-card {
+  display: flex;
+  background: linear-gradient(to right, #e4e4e4, #ffffff);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.1);
+  max-width: 800px;
+  width: 100%;
+  gap: 30px;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.right {
+  flex: 1;
+}
+
+.right h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #000;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+form button {
+  margin-top: 15px;
+  padding: 12px 24px;
+  background-color: #0055b7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #003f8f;
+}

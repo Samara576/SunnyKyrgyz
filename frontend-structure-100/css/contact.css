@@ -1,0 +1,101 @@
+/* contact.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fff8e1, #ffe0b2);
+  color: #1e2a38;
+  overflow: hidden;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 40px;
+}
+
+.contact-container {
+  background: linear-gradient(145deg, #ffffff, #fff2e0);
+  border: 6px solid transparent;
+  border-radius: 40px;
+  padding: 60px 80px;
+  max-width: 1100px;
+  width: 100%;
+  box-shadow: 0 0 25px 6px rgba(255, 188, 0, 0.7);
+  position: relative;
+  overflow-y: auto;
+  max-height: 92vh;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-container h2 {
+  margin-bottom: 30px;
+  font-size: 40px;
+  color: #1e2a38;
+  border-bottom: 3px solid #ffb347;
+  padding-bottom: 14px;
+}
+
+.contact-container p {
+  font-size: 20px;
+  margin-bottom: 24px;
+  line-height: 1.8;
+  color: #3d3d3d;
+}
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.contact-info strong {
+  display: inline-block;
+  min-width: 140px;
+  color: rgba(241, 103, 4, 0.982);
+}
+
+.contact-info a {
+  color: #00795f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #004d3f;
+  text-decoration: underline;
+}
+
+.home-button {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  font-size: 30px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: #2c3e50;
+  transition: transform 0.3s ease;
+}
+
+.home-button:hover {
+  transform: scale(1.2);
+}

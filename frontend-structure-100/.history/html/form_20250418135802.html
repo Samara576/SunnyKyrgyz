@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Бронирование</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (иконкалар үчүн) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('../img/form.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-box {
+      background: white;
+      padding: 40px 35px;
+      border-radius: 30px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.15);
+      width: 480px;
+      max-width: 95%;
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 26px;
+      color: #003049;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group i {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      color: #007b92;
+      font-size: 20px;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 14px 14px 14px 48px;
+      font-size: 17px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+    }
+
+    .double-group {
+      display: flex;
+      gap: 15px;
+    }
+
+    .double-group .input-group {
+      flex: 1;
+    }
+
+    .submit-btn {
+      background-color: #2d9c9c;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 18px;
+      width: 100%;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #247878;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>SunnyKyrgyzstan</h2>
+    <form action="#">
+      <div class="input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" placeholder="Имя" required>
+      </div>
+
+      <div class="input-group">
+        <i class="fa-solid fa-phone"></i>
+        <input type="tel" placeholder="Телефон" required>
+      </div>
+
+      <div class="double-group">
+        <div class="input-group">
+          <i class="fa-solid fa-calendar-days"></i>
+          <input type="date" required>
+        </div>
+        <div class="input-group">
+          <i class="fa-solid fa-user-group"></i>
+          <select required>
+            <option value="">Гости</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3+</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <i class="fa-solid fa-calendar-days"></i>
+        <input type="date" required>
+      </div>
+
+      <button type="submit" class="submit-btn">Забронировать сейчас</button>
+    </form>
+  </div>
+</body>
+</html>

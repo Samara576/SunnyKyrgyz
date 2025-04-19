@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Личный профиль</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span>SunnyKyrgyzstan</span>
+    </div>
+    <nav class="nav-links">
+      <a href="about.html" data-i18n="about">О нас</a>
+      <a href="contact.html" data-i18n="contact">Контакты</a>
+      <a href="index.html" data-i18n="index">Главная</a>
+    </nav>
+  </header>
+
+  <main class="profile-container">
+    <aside class="sidebar">
+      <ul>
+        <li class="active">Моя страница</li>
+        <li>Бронирование</li>
+        <li>Сообщения</li>
+        <li>Сохраненные</li>
+        <li>Отзывы</li>
+        <li>Настройки</li>
+      </ul>
+    </aside>
+
+    <section class="profile-content">
+      <div class="profile-card">
+        <img src="images/profile-photo.jpg" alt="Фото профиля" class="profile-photo" />
+        <div class="profile-info">
+          <h2>Анна Каренина</h2>
+          <label>Возраст</label>
+          <input type="text" value="28" disabled />
+          <label>Адрес</label>
+          <input type="text" value="г. Бишкек" disabled />
+          <label>Место работы</label>
+          <input type="text" value="Турфирма" disabled />
+          <button class="edit-btn">Редактировать</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/lang.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

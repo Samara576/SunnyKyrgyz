@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SunnyKyrgyzstan</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Видеофон -->
+  <video autoplay muted loop id="bg-video">
+    <source src="img/foon.mp4" type="video/mp4" />
+    Ваш браузер не поддерживает видео.
+  </video>
+
+  <!-- Затемнение -->
+  <div class="overlay"></div>
+
+  <!-- Контент -->
+  <div class="content">
+    <header>
+      <!-- 🔤 Языковые кнопки -->
+      <div class="lang-container">
+        <button class="lang-btn" data-lang="ru">🇷🇺</button>
+        <button class="lang-btn" data-lang="kg">🇰🇬</button>
+        <button class="lang-btn" data-lang="en">🇬🇧</button>
+      </div>
+
+      <!-- 🍔 Бургер-меню -->
+      <div class="burger" onclick="toggleMenu()">☰</div>
+
+      <!-- 🔗 Навигация -->
+      <nav id="navMenu">
+        <a href="about.html" data-i18n="about">О нас</a>
+        <a href="contact.html" data-i18n="contact">Контакты</a>
+        <a href="login.html" data-i18n="login">Войти</a>
+        <a href="register.html" data-i18n="register">Зарегистрироваться</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1 data-i18n="headline">
+        <span data-i18n="headline_start">Там, где горы касаются неба – начни своё</span><br>
+        <span data-i18n="headline_end">путешествие с</span> 
+        <span id="brand-name" data-i18n="company">SunnyKyrgyzstan</span> 
+      </h1>
+
+      <div class="buttons">
+        <button onclick="location.href='tour.html'" data-i18n="tours">Тур и маршруты</button>
+        <button onclick="location.href='hotel/hotel.html'" data-i18n="housing">Жильё</button>
+        <button onclick="location.href='agromarket/agro'" data-i18n="agromarket">AgroMarket</button>
+      </div>
+    </main>
+  </div>
+
+  <script>
+      const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+      const profileLink = document.getElementById("profile-link");
+      if (profileLink) {
+        profileLink.style.display = isLoggedIn ? "inline-block" : "none";
+      }
+  </script>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('show');
+    }
+  </script>
+
+  <script src="lang.js"></script>
+  <script>
+    // Добавим сразу сюда дополнительную проверку отображения "SunnyKyrgyzstan"
+    const langButtons = document.querySelectorAll(".lang-btn");
+    const elements = document.querySelectorAll("[data-i18n]");
+    const translations = {
+      ru: {
+        headline_start: "Там, где горы касаются неба – начни своё",
+        headline_end: "путешествие с",
+        about: "О нас",
+        contact: "Контакты",
+        login: "Войти",
+        register: "Зарегистрироваться",
+        tours: "Тур и маршруты",
+        housing: "Жильё",
+        agromarket: "AgroMarket",
+        company: "SunnyKyrgyzstan"
+      },
+      kg: {
+        headline_start: "Тоонун чокусу асманга тийген жерде –",
+        headline_end: "саякатыңды SunnyKyrgyzstan менен башта",
+        about: "Биз жөнүндө",
+        contact: "Байланыш",
+        login: "Кирүү",
+        register: "Катталуу",
+        tours: "Тур жана багыттар",
+        housing: "Турак жай",
+        agromarket: "AgroMarket",
+        company: ""
+      },
+      en: {
+        headline_start: "In the land where the sky touches the peaks – discover your",
+        headline_end: "adventure with",
+        about: "About us",
+        contact: "Contact",
+        login: "Login",
+        register: "Register",
+        tours: "Tours & Routes",
+        housing: "Hotels",
+        agromarket: "AgroMarket",
+        company: "SunnyKyrgyzstan"
+      }
+    };
+
+    function setLanguage(lang) {
+      localStorage.setItem("lang", lang);
+      elements.forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        const translation = translations[lang][key];
+        if (translation !== undefined) {
+          el.innerText = translation;
+        }
+      });
+
+      const brandSpan = document.getElementById("brand-name");
+      if (lang === "kg") {
+        brandSpan.style.display = "none";
+      } else {
+        brandSpan.style.display = "inline";
+      }
+    }
+
+    const savedLang = localStorage.getItem("lang") || "ru";
+    setLanguage(savedLang);
+
+    langButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang");
+        setLanguage(lang);
+      });
+    });
+  </script>
+
+</body>
+</html>

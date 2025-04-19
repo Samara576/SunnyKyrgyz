@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="contact_title">Байланыш - Sunny Kyrgyzstan</title>
+  <link rel="stylesheet" href="../css/">
+</head>
+<body>
+
+  <!-- Байланыш барагы -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <h2 data-i18n="contact_header">Байланыш маалыматтары</h2>
+      <p data-i18n="contact_info">Биз дайыма байланыштабыз. Сиз биз менен төмөнкү маалыматтар аркылуу байланыша аласыз:</p>
+
+      <ul class="contact-info">
+        <li>
+          <strong data-i18n="email_label">Электрондук почта:</strong>
+          <a href="mailto:Sunny.Kyrgyzstan1@gmail.com">SunnyKyrgyzstan@gmail.com</a>
+        </li>
+        <li>
+          <strong data-i18n="phone_label">Телефон:</strong>
+          <a href="tel:+996701044361">+996 701 044 361</a>
+        </li>
+        <li>
+          <strong data-i18n="address_label">Дарек:</strong>
+          <a href="https://www.google.com/maps/search/?api=1&query=Раззаков+шаары+Лейлек+району" target="_blank">
+            Кыргыз Республикасы, Баткен облусу, Лейлек району, Раззаков шаары
+          </a>
+        </li>
+      </ul>
+
+      <a href="index.html" class="home-button" data-i18n="home_button">🏠</a>
+    </div>
+  </section>
+
+  <!-- Скрипт перевода через localStorage -->
+  <script>
+    const translations = {
+      ru: {
+        contact_title: "Контакты - Sunny Kyrgyzstan",
+        contact_header: "Контактная информация",
+        contact_info: "Мы всегда на связи. Свяжитесь с нами удобным для вас способом:",
+        email_label: "Электронная почта:",
+        phone_label: "Телефон:",
+        address_label: "Адрес:",
+        home_button: "🏠"
+      },
+      kg: {
+        contact_title: "Байланыш - Sunny Kyrgyzstan",
+        contact_header: "Байланыш маалыматтары",
+        contact_info: "Биз дайыма байланыштабыз. Сиз биз менен төмөнкү маалыматтар аркылуу байланыша аласыз:",
+        email_label: "Электрондук почта:",
+        phone_label: "Телефон:",
+        address_label: "Дарек:",
+        home_button: "🏠"
+      },
+      en: {
+        contact_title: "Contact - Sunny Kyrgyzstan",
+        contact_header: "Contact Information",
+        contact_info: "We are always available. You can contact us through the following information:",
+        email_label: "Email:",
+        phone_label: "Phone:",
+        address_label: "Address:",
+        home_button: "🏠"
+      }
+    };
+
+    const lang = localStorage.getItem("lang") || "ru";
+    const langData = translations[lang];
+
+    document.title = langData["contact_title"];
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (langData[key]) {
+        if (el.tagName === "A" || el.tagName === "SPAN") {
+          el.textContent = langData[key];
+        } else {
+          el.innerHTML = langData[key];
+        }
+      }
+    });
+
+    document.getElementById("current-lang").textContent = {
+      ru: "🇷🇺 RU",
+      en: "🇬🇧 EN",
+      kg: "🇰🇬 KG"
+    }[lang];
+  </script>
+
+</body>
+</html>
